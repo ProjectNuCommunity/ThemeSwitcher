@@ -1,0 +1,9 @@
+light_theme:
+  default: 39
+  type: integer
+  description: "Light Theme ID"
+
+dark_theme:
+  default: 103
+  type: integer
+  description: "Dark Theme ID"

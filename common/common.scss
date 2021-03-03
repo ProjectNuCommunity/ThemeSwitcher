@@ -1,0 +1,27 @@
+/********************
+ *  THEME SWITCHER  *
+ ********************/
+
+.d-header .header-buttons {
+    margin-right: 2.8rem;
+}
+
+.switcher {
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus .d-icon,
+    &:active .d-icon,
+    &:hover .d-icon {
+        box-shadow: 0 0 0 2px var(--secondary), 0 0 0 4px var(--cc-custom-links-border);
+        color: var(--primary);
+    }
+
+    .d-icon {
+        border-radius: 2px;
+        color: var(--primary-medium);
+        font-size: 1.7511em;
+        padding: 0.2rem;
+    }
+}

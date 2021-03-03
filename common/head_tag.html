@@ -1,0 +1,50 @@
+<!-----------------------
+ --   THEME SWITCHER   --  
+ ------------------------>
+
+<script type="text/discourse-plugin" version="0.8">
+    var h = require('virtual-dom').h;
+    var ajax = require('discourse/lib/ajax').ajax;
+    var themeSelector = require('discourse/lib/theme-selector');
+    var light = settings.light_theme;
+    var dark = settings.dark_theme;
+    
+    const { iconNode } = require("discourse-common/lib/icon-library");
+    let icon = iconNode('adjust');
+  
+    api.createWidget("switcher", {
+        tagName: "div.switcher.headerLink.vdm.keep",
+        title: "Theme Switcher",
+        buildKey: attrs => `switcher headerLink vdm keep`,
+        click(event){
+            let $target = $(event.target);
+            let id = light;
+            let user = api.getCurrentUser();
+            if(user){
+                console.log(themeSelector.currentThemeId());
+              if (themeSelector.currentThemeId() == light) {
+                id = dark;
+              }
+              user.findDetails().then(user => {
+                    seq = user.get("user_option.theme_key_seq");
+                    this.setTheme(id, seq);
+                });
+            }else{
+                this.setTheme(id);
+            };
+            return true;
+        },
+        setTheme(themeId, seq = 0){
+            themeSelector.setLocalTheme([themeId], seq);
+            window.location.reload();
+            this.scheduleRerender();
+        },
+        html(attrs){
+              return icon;
+        }
+    });
+    
+    api.decorateWidget('header-buttons:after', (helper)=>{
+      return [helper.widget.attach('switcher')];
+    });
+  </script>
