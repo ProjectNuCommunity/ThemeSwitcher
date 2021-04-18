@@ -21,12 +21,12 @@
             let id = light;
             let user = api.getCurrentUser();
             if(user){
-                console.log(themeSelector.currentThemeId());
+              console.log(themeSelector.currentThemeId());
               if (themeSelector.currentThemeId() == light) {
                 id = dark;
               }
               user.findDetails().then(user => {
-                    seq = user.get("user_option.theme_key_seq");
+                    let seq = user.get("user_option.theme_key_seq");
                     this.setTheme(id, seq);
                 });
             }else{
