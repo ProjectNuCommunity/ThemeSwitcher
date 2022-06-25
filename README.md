@@ -1,4 +1,4 @@
-# CommunityTheme-ThemeSwitcher
+# Theme Switcher
 Theme Switcher Component
 
 # Additionally to the LICENCE

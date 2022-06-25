@@ -1,7 +1,7 @@
 {
-    "name": "Codecademy Community Theme Switcher",
-    "about_url": "https://github.com/A-J-C/CommunityTheme-ThemeSwitcher/blob/master/README.md",
-    "license_url": "https://github.com/A-J-C/CommunityTheme-ThemeSwitcher/blob/master/LICENSE",
+    "name": "Theme Switcher",
+    "about_url": "https://github.com/ProjectNuCommunity/ThemeSwitcher/blob/main/README.md",
+    "license_url": "https://github.com/ProjectNuCommunity/ThemeSwitcher/blob/main/LICENSE",
     "authors": "Alex",
     "theme_version": "1.0",
     "assets": {},
